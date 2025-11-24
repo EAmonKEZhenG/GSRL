@@ -1,4 +1,4 @@
-/* ===== 字体：Brunson 实心 + Rough ===== */
+
 @font-face {
   font-family: "Brunson";
   src: url("../assets/fonts/Brunson.ttf") format("truetype");
@@ -23,13 +23,13 @@
   font-display: swap;
 }
 
-/* ===== 全局变量 ===== */
+
 :root {
   --bg: #000;
   --text-main: #e5e5e5;
 }
 
-/* ===== reset ===== */
+
 * {
   margin: 0;
   padding: 0;
@@ -48,7 +48,7 @@ body {
   overflow: hidden;
 }
 
-/* ===== 外层 page，用来挂“导航打开”状态 ===== */
+
 .page {
   position: relative;
   width: 100%;
@@ -56,7 +56,7 @@ body {
   overflow: hidden;
 }
 
-/* 打开导航时，让遮罩更深一点（可选） */
+
 .page--nav-open .hero__overlay {
   background: rgba(0, 0, 0, 0.75);
 }
@@ -66,7 +66,7 @@ body {
   pointer-events: none;
 }
 
-/* ===== Hero 主区域 ===== */
+
 .hero {
   position: relative;
   width: 100%;
@@ -74,7 +74,7 @@ body {
   overflow: hidden;
 }
 
-/* 背景视频 */
+
 .hero__bg-video {
   position: absolute;
   inset: 0;
@@ -83,7 +83,7 @@ body {
   object-fit: cover;
 }
 
-/* 遮罩 */
+
 .hero__overlay {
   position: absolute;
   inset: 0;
@@ -96,7 +96,7 @@ body {
   pointer-events: none;
 }
 
-/* 中间内容 */
+
 .hero__content {
   position: relative;
   z-index: 1;
@@ -107,13 +107,13 @@ body {
   justify-content: center;
 }
 
-/* 文案容器 */
+
 .hero__text {
   text-align: center;
   line-height: 0.80;
 }
 
-/* 大字通用样式 */
+
 .hero__line {
   font-family: "Brunson", system-ui, -apple-system, "Segoe UI",
     "Microsoft YaHei", sans-serif;
@@ -126,16 +126,16 @@ body {
   font-size: clamp(5.5rem, 23vw, 30rem);
 }
 
-/* 右侧箭头（打开导航） */
+
 .hero__arrow {
   position: absolute;
   right: 40px;
   top: 50%;
   transform: translateY(-50%);
-  width: 44px;              /* 点击范围 */
+  width: 44px;             
   height: 44px;
   border: none;
-  background: transparent;  /* ❗ 去掉圆形背景 */
+  background: transparent; 
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -147,7 +147,7 @@ body {
     transform 0.2s ease;
 }
 
-/* 首页右侧的白色 “>” 箭头 */
+
 .hero__arrow-icon {
   width: 30px;
   height: 30px;
@@ -158,24 +158,24 @@ body {
   transform: rotate(45deg);
 }
 
-/* hover 稍微动一下就够了 */
+
 .hero__arrow:hover .hero__arrow-icon {
   transform: rotate(45deg) translateX(1px);
 }
 
-/* 点击有一点缩放反馈（可选） */
+
 .hero__arrow:active {
   transform: translateY(-50%) scale(0.97);
 }
 
-/* ===== 右侧导航面板 ===== */
+
 .nav-panel {
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
 
-  width: min(60vw, 840px); /* 半屏偏多 */
+  width: min(65vw, 950px);
   background: #d9d9d9;
   color: #000;
 
@@ -185,12 +185,12 @@ body {
   z-index: 5;
 }
 
-/* 打开导航：滑入 */
+
 .page--nav-open .nav-panel {
   transform: translateX(0);
 }
 
-/* 内层布局 */
+
 .nav-panel__inner {
   position: relative;
   width: 100%;
@@ -200,7 +200,7 @@ body {
   flex-direction: column;
 }
 
-/* 顶部小标题（左上） */
+
 .nav-panel__top {
   font-family: system-ui, -apple-system, "Segoe UI", "Microsoft YaHei",
     sans-serif;
@@ -212,11 +212,11 @@ body {
 }
 
 .nav-panel__label {
-  border-top: 3px solid #0066aa; /* 先随便用个蓝色，之后按设计改 */
+  border-top: 3px solid #0066aa;
   padding-top: 8px;
 }
 
-/* 主体两列 */
+
 .nav-panel__body {
   flex: 1;
   display: flex;
@@ -225,28 +225,28 @@ body {
 .nav-panel__list {
   display: flex;
   flex-direction: column;
-  gap: 25px;        /* 每一行之间的距离，按你视觉感觉调 */
+  gap: 25px;       
 }
 
-/* 每一行：数字 + 标题 */
+
 .nav-panel__row {
   display: flex;
-  align-items: flex-start;   /* 关键：顶对齐 */
-  gap: 24px;                 /* 数字和标题之间的横向距离 */
+  align-items: flex-start;  
+  gap: 24px;                
 }
 
 .nav-panel__index {
   font-family: "FuturaGSIL", system-ui, -apple-system, "Segoe UI",
     "Microsoft YaHei", sans-serif;
   font-weight: 700;
-  font-size: 1.1rem;      /* 字有点小就往上加，比如 1.1rem */
-  letter-spacing: 0.1em;  /* 数字之间距离，你可以自己微调 */
+  font-size: 1.1rem;     
+  letter-spacing: 0.1em; 
   text-transform: uppercase;
   color: #111;
 }
 
 
-/* 菜单项：Brunson 粗字 */
+
 .nav-panel__item {
   font-family: "Brunson", system-ui, -apple-system, "Segoe UI",
     "Microsoft YaHei", sans-serif;
@@ -264,7 +264,7 @@ body {
   position: relative;
   overflow: visible;
 }
-/* 下划线 */
+
 .nav-panel__item::after {
   content: "";
   position: absolute;
@@ -282,7 +282,7 @@ body {
 }
 
 
-/* 右侧关闭箭头（指向左） */
+
 .nav-panel__close {
   position: absolute;
   top: 50%;
@@ -299,7 +299,7 @@ body {
   padding: 0;
 }
 
-/* 箭头本体 */
+
 .nav-panel__close-icon {
   width: 30px;
   height: 30px;
@@ -319,7 +319,7 @@ body {
   transform: translateY(-50%) scale(0.97);
 }
 
-/* ===== 响应式：窄屏让导航占满 ===== */
+
 @media (max-width: 1024px) {
   .nav-panel {
     width: 100%;
