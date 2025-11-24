@@ -8,9 +8,7 @@
 </head>
 <body>
   <main class="page" id="page-root">
-    <!-- ===== Hero 首页：背景视频 + FRIENDSHIP DRIVEN ===== -->
     <section class="hero">
-      <!-- 背景视频 -->
       <video
         class="hero__bg-video"
         src="./assets/video/home-bg.mp4"
@@ -20,10 +18,8 @@
         playsinline
       ></video>
 
-      <!-- 深色遮罩，防止文字看不清 -->
       <div class="hero__overlay"></div>
 
-      <!-- 中间的文字层 -->
       <div class="hero__content">
         <div class="hero__text">
           <div class="hero__line hero__line--top">FRIENDSHIP</div>
@@ -31,13 +27,12 @@
         </div>
       </div>
 
-      <!-- 右侧可点击箭头：打开导航面板 -->
+
       <button class="hero__arrow" id="hero-next" aria-label="Open menu">
         <span class="hero__arrow-icon"></span>
       </button>
     </section>
 
-        <!-- ===== 右侧导航面板 ===== -->
     <section class="nav-panel" aria-hidden="true" id="nav-panel">
       <div class="nav-panel__inner">
 
@@ -61,12 +56,12 @@
 
             <div class="nav-panel__row">
               <span class="nav-panel__index">04</span>
-              <button class="nav-panel__item">RULES</button>
+              <button class="nav-panel__item" data-link="rules.html">RULES</button>
             </div>
 
             <div class="nav-panel__row">
               <span class="nav-panel__index">05</span>
-              <button class="nav-panel__item">ABOUT</button>
+              <button class="nav-panel__item" data-link="about.html">ABOUT</button>
             </div>
 
           </div>

@@ -6,7 +6,7 @@ const SEASONS = [
     races: [
       { name: "Silverstone", flag: "./assets/images/flag/united-kingdom.png" },
       { name: "Hakone", flag: "./assets/images/flag/japan.png" },
-      { name: "Spa-Francorchamps", flag: "./assets/images/flag/united-kingdom.png" }, // Belgium flag placeholder
+      { name: "Spa-Francorchamps", flag: "./assets/images/flag/united-kingdom.png" },
       { name: "Hockenheim", flag: "./assets/images/flag/germany.png" },
       { name: "Watkins Glen", flag: "./assets/images/flag/united-states.png" },
       { name: "Yas Marina", flag: "./assets/images/flag/united-arab-emirates.png" }
@@ -28,7 +28,7 @@ const SEASONS = [
     races: [
       { name: "Silverstone", flag: "./assets/images/flag/united-kingdom.png" },
       { name: "Hakone", flag: "./assets/images/flag/japan.png" },
-      { name: "Spa-Francorchamps", flag: "./assets/images/flag/united-kingdom.png" }, // Belgium flag placeholder
+      { name: "Spa-Francorchamps", flag: "./assets/images/flag/united-kingdom.png" },
       { name: "Hockenheim", flag: "./assets/images/flag/germany.png" },
       { name: "Watkins Glen", flag: "./assets/images/flag/united-states.png" },
       { name: "Yas Marina", flag: "./assets/images/flag/united-arab-emirates.png" }
@@ -50,7 +50,7 @@ const SEASONS = [
     races: [
       { name: "Silverstone", flag: "./assets/images/flag/united-kingdom.png" },
       { name: "Hakone", flag: "./assets/images/flag/japan.png" },
-      { name: "Spa-Francorchamps", flag: "./assets/images/flag/united-kingdom.png" }, // Belgium flag placeholder
+      { name: "Spa-Francorchamps", flag: "./assets/images/flag/united-kingdom.png" },
       { name: "Hockenheim", flag: "./assets/images/flag/germany.png" },
       { name: "Watkins Glen", flag: "./assets/images/flag/united-states.png" },
       { name: "Yas Marina", flag: "./assets/images/flag/united-arab-emirates.png" }
@@ -119,7 +119,7 @@ const SEASONS = [
     races: [
       { name: "Silverstone", flag: "./assets/images/flag/united-kingdom.png" },
       { name: "Hakone", flag: "./assets/images/flag/japan.png" },
-      { name: "Spa-Francorchamps", flag: "./assets/images/flag/united-kingdom.png" }, // Belgium flag placeholder
+      { name: "Spa-Francorchamps", flag: "./assets/images/flag/united-kingdom.png" },
       { name: "Hockenheim", flag: "./assets/images/flag/germany.png" },
       { name: "Watkins Glen", flag: "./assets/images/flag/united-states.png" },
       { name: "Yas Marina", flag: "./assets/images/flag/united-arab-emirates.png" }
@@ -131,7 +131,7 @@ const SEASONS = [
       { driver: "Joseph", team: "AMG", points: [16, 15, 14, null, null, null] },
       { driver: "CZ", team: "Audi", points: [11, 13, 2, null, null, null] },
       { driver: "Daniel", team: "Ferrari", points: ["DNF", "DNF", "DNF", null, null, null] },
-      { driver: "Billy", team: "Lexus", points: ["DNF", "DNF", "DNF", null, null, null] } // Practice debut
+      { driver: "Billy", team: "Lexus", points: ["DNF", "DNF", "DNF", null, null, null] }
     ],
     gallery: [
       "./assets/images/season_images/S6/S6R1_Start.png",
