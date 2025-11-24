@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>GSIL Racing Club – About</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./css/about.css" />
+</head>
+<body>
+  <main class="about-page">
+    <header class="about-header">
+      <span class="about-header__index">05</span>
+
+      <div class="about-header__title-block">
+        <h1 class="about-header__title">ABOUT</h1>
+      </div>
+    </header>
+
+    <section class="about-main">
+      <p>
+        You are now visiting the official website of Glendale Sim-Racing League (GSRL).
+        We are a non-profit racing league established and organized by a group of close
+        friends who share a passion for sim racing.
+      </p>
+      <p>
+        If you have any questions, please contact us at
+        <a href="mailto:info@robinlyu.com" class="about-main__email">
+          info@robinlyu.com
+        </a>.
+      </p>
+    </section>
+
+    <section class="about-credits">
+      <h2 class="about-credits__title">CREDITS</h2>
+
+        <div class="about-credits__grid">
+          <div>
+            <div class="about-credits__label">WEBSITE DESIGNED BY</div>
+            <div class="about-credits__value">
+              <a href="https://www.chenzhengli.com/"
+                target="_blank"
+                rel="noopener noreferrer">
+                Chenzheng Li
+              </a>
+              &amp;
+              <a href="https://www.robinlyu.com/"
+                target="_blank"
+                rel="noopener noreferrer">
+                Robin Lyu
+              </a>
+            </div>
+          </div>
+
+          <div>
+            <div class="about-credits__label">WEB DEVELOPER</div>
+            <div class="about-credits__value">
+              <a href="https://www.chenzhengli.com/"
+                target="_blank"
+                rel="noopener noreferrer">
+                Chenzheng Li
+              </a>
+            </div>
+          </div>
+
+          <div>
+            <div class="about-credits__label">FLAG GRAPHICS</div>
+            <div class="about-credits__value">
+              Flaticon – Freepik
+            </div>
+          </div>
+        </div>
+
+
+      <div class="about-credits__grid2">
+        <div class="about-credits__item">
+          <h3 class="about-credits__label">Font</h3>
+          <p class="about-credits__value">Brunson, Futura PT, Helvetica Neue</p>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <button
+    class="about-close"
+    id="about-close"
+    aria-label="Back to home"
+  >
+    <span class="about-close__icon">×</span>
+  </button>
+
+  <script>
+    document.getElementById('about-close')?.addEventListener('click', () => {
+      window.location.href = './index.html';
+    });
+  </script>
+</body>
+</html>
