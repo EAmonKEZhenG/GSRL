@@ -1,5 +1,3 @@
-// js/results.js
-
 // Helper function to calculate total points (treats "DNF" as 0)
 function calculateTotal(points) {
   return points.reduce((sum, p) => {
@@ -49,21 +47,16 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
-  // ===== 导航 & 关闭 =====
 
-  // 返回首页
   backBtn?.addEventListener("click", () => {
     window.location.href = "index.html";
   });
 
-  // 右侧 X 关闭按钮返回首页
   closeBtn?.addEventListener("click", () => {
     window.location.href = "index.html";
   });
 
-  // ===== Season 下拉按钮交互 =====
 
-  // 点击按钮展开/收起菜单
   seasonSelectBtn?.addEventListener("click", (e) => {
     e.stopPropagation();
     const isOpen = seasonSelectMenu.style.display === "block";
@@ -71,7 +64,6 @@ document.addEventListener("DOMContentLoaded", () => {
     seasonSelectBtn.classList.toggle("active", !isOpen);
   });
 
-  // 点击外部关闭菜单
   document.addEventListener("click", (e) => {
     if (
       !seasonSelectBtn.contains(e.target) &&
@@ -82,7 +74,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // ===== 填充 season 下拉菜单 =====
   function buildSeasonMenu() {
     seasonSelectMenu.innerHTML = "";
 
@@ -125,24 +116,20 @@ document.addEventListener("DOMContentLoaded", () => {
     seasonSelectText.textContent = SEASONS[0].label;
   }
 
-  // ===== 渲染某个赛季 =====
   function renderSeason(seasonId) {
     const season = SEASONS.find((s) => s.id === seasonId);
     if (!season) return;
 
-    // 系列名称
     seriesNameEl.textContent = season.seriesName;
 
-    // 表头：POSITION / DRIVER / SCORE + 每轮国旗
     const table = document.querySelector(".results-table");
     const theadRow = table.querySelector("thead tr");
 
-    // 先清掉之前的"比赛列"
+
     while (theadRow.children.length > 3) {
       theadRow.removeChild(theadRow.lastElementChild);
     }
 
-    // 添加国旗列
     season.races.forEach((race) => {
       const th = document.createElement("th");
       th.className = "results-table__th results-table__th--race";
@@ -164,7 +151,6 @@ document.addEventListener("DOMContentLoaded", () => {
       theadRow.appendChild(th);
     });
 
-    // 计算总分并排序
     const standingsWithTotals = season.standings.map((d) => ({
       ...d,
       total: calculateTotal(d.points),
@@ -174,7 +160,6 @@ document.addEventListener("DOMContentLoaded", () => {
       .sort((a, b) => b.total - a.total)
       .map((d, idx) => ({ ...d, position: idx + 1 }));
 
-    // 找出每场比赛的冠军（最高分）
     const raceChampions = [];
     for (let raceIdx = 0; raceIdx < season.races.length; raceIdx++) {
       let maxScore = -1;
@@ -200,7 +185,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const overallChampion = sorted.find((d) => d.position === 1);
 
-    // 渲染 tbody
     tbody.innerHTML = "";
     sorted.forEach((row) => {
       const tr = document.createElement("tr");
@@ -238,12 +222,10 @@ document.addEventListener("DOMContentLoaded", () => {
       tdTotal.textContent = row.total;
       tr.appendChild(tdTotal);
 
-      // 每场得分
       row.points.forEach((p, raceIdx) => {
         const td = document.createElement("td");
         td.className = "results-table__race";
 
-        // 高亮总冠军的夺冠场次
         if (row.position === 1 && overallChampion && raceChampions[raceIdx]) {
           const isChampionRace =
             raceChampions[raceIdx].driver === overallChampion.driver &&
@@ -268,7 +250,6 @@ document.addEventListener("DOMContentLoaded", () => {
       tbody.appendChild(tr);
     });
 
-    // 底部 gallery
     galleryEl.innerHTML = "";
     if (season.gallery && season.gallery.length > 0) {
       season.gallery.forEach((src) => {
@@ -291,7 +272,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // ===== Modal 关闭 =====
+
   modalClose.addEventListener("click", () => {
     modal.style.display = "none";
   });
@@ -302,12 +283,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // ===== 初始化默认赛季 =====
   if (SEASONS.length > 0) {
     renderSeason(SEASONS[0].id);
   }
 
-  // ===== 同步 Season 按钮大小（可选） =====
   function syncSeasonButtonHeight() {
     const resultsTitle = document.querySelector(".results-header__title");
     const seasonBtn = document.querySelector(".results-header__season-btn");

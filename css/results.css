@@ -1,7 +1,4 @@
-/* =========================================
-   1. Font Definitions
-   Matches home.css to ensure consistency
-   ========================================= */
+
 @font-face {
     font-family: "Brunson";
     src: url("../assets/fonts/Brunson.ttf") format("truetype");
@@ -26,9 +23,7 @@
     font-display: swap;
 }
 
-/* =========================================
-   2. Global Reset & Base Styles
-   ========================================= */
+
 * {
     margin: 0;
     padding: 0;
@@ -40,28 +35,23 @@ html, body {
 }
 
 body {
-    background: #d9d9d9; /* Light grey background */
+    background: #d9d9d9;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
 }
 
-/* 统一控制表格第一列的左缩进，有需要只改这里 */
+
 :root {
     --results-left-offset: 76px;
 }
 
-/* =========================================
-   3. Main Page Container
-   ========================================= */
+
 .results-page {
     min-height: 100vh;
     padding: 40px 140px 50px 50px;
     position: relative;
 }
 
-/* =========================================
-   4. Header Section
-   Contains: "01", Title, Subtitle, Season Selector
-   ========================================= */
+
 .results-header {
     display: flex;
     align-items: flex-start;
@@ -69,7 +59,7 @@ body {
     margin-bottom: 28px;
 }
 
-/* --- Index Number (Top Left "01") --- */
+
 .results-header__index {
     font-family: "FuturaGSIL", system-ui, sans-serif;
     font-size: 2.5rem;
@@ -79,11 +69,11 @@ body {
     margin-top: 0;
 }
 
-/* --- Titles Wrapper --- */
+
 .results-header__titlegroup {
     display: flex;
     flex-direction: column;
-    gap: 6px; /* Spacing between Main Title and Subtitle */
+    gap: 6px;
 }
 
 .results-header__topline {
@@ -93,20 +83,20 @@ body {
 .results-header__title-row {
     display: flex;
     align-items: flex-end;
-    gap: 20px; /* Spacing between "RESULTS" and Season Button */
+    gap: 20px;
 }
 
-/* --- Main Title "RESULTS" --- */
+
 .results-header__title {
     font-family: "Brunson", system-ui, sans-serif;
-    font-size: clamp(4.8rem, 12vw, 15rem); /* Responsive font size */
+    font-size: clamp(4.8rem, 12vw, 15rem);
     font-weight: 900;
     text-transform: uppercase;
     line-height: 0.95;
     letter-spacing: 0.04em;
 }
 
-/* --- Subtitle (Series Name) --- */
+
 .results-header__subtitle {
     margin-top: 0.2rem;
     font-family: "Brunson", system-ui, sans-serif;
@@ -117,34 +107,32 @@ body {
     color: #2f2f2f;
 }
 
-/* =========================================
-   5. Season Selector (Responsive Diamond)
-   ========================================= */
+
 .results-header__season {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  margin-left: 8px;          /* 和 “RESULTS” 之间的距离 */
-  transform: translateY(-6px); /* 微调垂直对齐 */
+  margin-left: 8px;         
+  transform: translateY(-6px);
   position: relative;
   z-index: 100;
 }
 
-/* 菱形按钮容器 */
+
 .results-header__season .season-dropdown {
   position: relative;
   display: inline-block;
   z-index: 100;
 }
 
-/* 菱形 Season 按钮（和 Highlights 同款） */
+
 .season-trigger {
   background: #000;
   color: #fff;
   border: 1px solid #000;
   cursor: pointer;
 
-  transform: skewX(-20deg);   /* 外轮廓倾斜 */
+  transform: skewX(-20deg);  
 
   font-size: clamp(14px, 1.5vw, 24px);
   padding: 1em 2.4em;
@@ -167,19 +155,19 @@ body {
   transform: skewX(-20deg) translate(-1px, -1px);
 }
 
-/* 文字摆正 + 字间距 */
+
 #season-select-text {
   display: block;
-  transform: skewX(20deg);      /* 抵消外层的 -20deg */
+  transform: skewX(20deg);     
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
-/* 下拉菜单本体（斜的白色卡片） */
+
 .season-menu {
-  display: none;                /* 用 JS 控制显示/隐藏 */
+  display: none;               
   position: absolute;
-  top: 100%;                    /* 挨着按钮底部 */
+  top: 100%;                   
   left: 0;
   margin-top: 6px;
   width: 100%;
@@ -192,10 +180,10 @@ body {
   transform-origin: top left;
 
   overflow: hidden;
-  z-index: 9999;                /* 确保不会被表格/图片盖住 */
+  z-index: 9999;               
 }
 
-/* 单个 Season 选项（注意 span 里再反向 skew 把字摆正） */
+
 .season-option {
   padding: 10px 0;
   text-align: center;
@@ -209,10 +197,10 @@ body {
 
 .season-option span {
   display: block;
-  transform: skewX(20deg);     /* 抵消外层 -20deg，让文字直立 */
+  transform: skewX(20deg);    
 }
 
-/* 选中/悬停的高亮状态（蓝色条完全铺满斜框） */
+
 .season-option:hover,
 .season-option--active,
 .season-menu .season-option.active {
@@ -220,9 +208,7 @@ body {
   color: #fff;
 }
 
-/* =========================================
-   6. Results Table
-   ========================================= */
+
 .results-table-section {
     margin-top: 15px;
     position: relative;
@@ -239,24 +225,24 @@ body {
     font-size: 2.5rem;
     text-align: left;
     padding: 10px 12px;
-    border-bottom: 5px solid #000;  /* 只有这一条粗线 */
+    border-bottom: 5px solid #000; 
     font-weight: 700;
     letter-spacing: 0.02em;
 }
 
-/* Column Widths */
+
 .results-table__th--pos   { width: 100px; }
 .results-table__th--driver{ width: 300px; }
 .results-table__th--score { width: 140px; }
 
-/* Flag Headers */
+
 .results-table__th--race {
     padding: 14px 8px;
     vertical-align: middle;
     text-align: center;
 }
 
-/* 国旗容器：正圆 */
+
 .results-table__th-flag {
     display: inline-flex;
     align-items: center;
@@ -286,7 +272,7 @@ body {
     border: none;
 }
 
-/* Flag Tooltips */
+
 .results-table__th-flag-tooltip {
     position: absolute;
     bottom: 100%;
@@ -308,7 +294,7 @@ body {
     opacity: 1;
 }
 
-/* --- Table Body Rows --- */
+
 .results-table tbody tr {
     border-bottom: 1px solid #000;
 }
@@ -319,13 +305,13 @@ body {
     vertical-align: top;
 }
 
-/* 第一列整体右移一点，与标题对齐 */
+
 .results-table th:first-child,
 .results-table td:first-child {
   padding-left: var(--results-left-offset);
 }
 
-/* --- Position Number Styling --- */
+
 .results-table .results-table__pos {
   font-family: "Brunson", system-ui, -apple-system, "Segoe UI", "Microsoft YaHei", sans-serif;
   font-size: 4rem;
@@ -333,13 +319,13 @@ body {
   line-height: 1;
 }
 
-/* Rank Colors */
+
 .results-table__pos--gold   { color: #d4af37; }
 .results-table__pos--silver { color: #c0c0c0; }
 .results-table__pos--bronze { color: #cd7f32; }
 .results-table__pos--default{ color: #000; }
 
-/* --- Driver Info Styling --- */
+
 .results-table__driver-name {
     font-family: "Helvetica Neue", system-ui, sans-serif;
     font-size: 2rem;
@@ -358,7 +344,7 @@ body {
     font-weight: 400;
 }
 
-/* --- Score Styling --- */
+
 .results-table .results-table__total {
     font-family: "Helvetica Neue", system-ui, sans-serif;
     font-size: 2rem;
@@ -376,7 +362,7 @@ body {
   background-color: transparent;
   color: #d4af37;
   font-weight: 900;
-  font-size: 2.1rem; /* 比普通 2rem 稍微大一点 */
+  font-size: 2.1rem;
 }
 
 .results-table__race--dnf {
@@ -386,9 +372,7 @@ body {
     color: #666;
 }
 
-/* =========================================
-   7. Floating Close Button
-   ========================================= */
+
 .results-close {
     position: fixed;
     right: 50px;
@@ -417,12 +401,10 @@ body {
     transform: scale(1.1);
 }
 
-/* =========================================
-   8. Bottom Gallery Section
-   ========================================= */
+
 .results-gallery {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));  /* 一行 3 列 */
+  grid-template-columns: repeat(3, minmax(0, 1fr)); 
   gap: 20px;
   margin-top: 40px;
 }
@@ -434,7 +416,7 @@ body {
   cursor: pointer;
   transition: transform 0.2s;
 
-  /* 统一长宽比：16:9 */
+ 
   aspect-ratio: 16 / 9;
 }
 
@@ -449,9 +431,7 @@ body {
     display: block;
 }
 
-/* =========================================
-   9. Image Modal (Lightbox)
-   ========================================= */
+
 .results-modal {
     position: fixed;
     top: 0;
@@ -494,9 +474,7 @@ body {
     border-radius: 4px;
 }
 
-/* =========================================
-   10. Responsive Design (Mobile)
-   ========================================= */
+
 @media (max-width: 1024px) {
     .results-gallery {
         grid-template-columns: repeat(2, minmax(0, 1fr));
