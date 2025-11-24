@@ -1,4 +1,4 @@
-/* ========== 字体 ========== */
+
 @font-face {
   font-family: "Brunson";
   src: url("../assets/fonts/Brunson.ttf") format("truetype");
@@ -23,7 +23,7 @@
   font-display: swap;
 }
 
-/* ========== Reset ========== */
+
 * {
   margin: 0;
   padding: 0;
@@ -41,27 +41,27 @@ body {
     "Microsoft YaHei", sans-serif;
 }
 
-/* 和 results / highlights 共用的左边对齐偏移量 */
+
 :root {
   --page-main-offset: 76px;
 }
 
-/* ========== 页面容器 ========== */
+
 .drivers-page {
   min-height: 100vh;
-  padding: 40px 140px 50px 50px; /* 左 50 右 140，和其他子页面一致 */
+  padding: 40px 140px 50px 50px;
   position: relative;
 }
 
-/* ========== 顶部 Header ========== */
+
 .drivers-header {
   display: flex;
   align-items: flex-start;
   column-gap: 24px;
-  margin-bottom: 0;          /* 原来是 32px，改成 0，让间距交给名字自己控制 */
+  margin-bottom: 0;         
 }
 
-/* 左上角 02 */
+
 .drivers-header__index {
   font-family: "FuturaGSIL", system-ui, sans-serif;
   font-size: 2.5rem;
@@ -71,22 +71,22 @@ body {
   margin-top: 0;
 }
 
-/* 标题块整体右移，与 RESULTS / HIGHLIGHTS 对齐 */
+
 .drivers-header__title-block {
-  /* margin-left: var(--page-main-offset); */
+ 
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
 
-/* 第一行：DRIVERS + 选择按钮 */
+
 .drivers-header__top-row {
   display: flex;
   align-items: flex-end;
   gap: 20px;
 }
 
-/* DRIVERS 大标题（和 RESULTS/HIGHLIGHTS 一样） */
+
 .drivers-header__title {
   font-family: "Brunson", system-ui, sans-serif;
   font-size: clamp(4.8rem, 12vw, 15rem);
@@ -96,18 +96,18 @@ body {
   letter-spacing: 0.04em;
 }
 
-/* 按钮容器（和其他页面一致的对齐方式） */
+
 .drivers-header__chooser {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  margin-left: 8px;        /* 和 DRIVERS 之间留一点缝 */
+  margin-left: 8px;       
   transform: translateY(-6px);
   position: relative;
   z-index: 100;
 }
 
-/* ========== 菱形按钮样式（复用 results / highlights） ========== */
+
 .season-dropdown {
   position: relative;
   display: inline-block;
@@ -120,7 +120,7 @@ body {
   border: 1px solid #000;
   cursor: pointer;
 
-  transform: skewX(-20deg);       /* 外轮廓倾斜 */
+  transform: skewX(-20deg);      
 
   font-size: clamp(14px, 1.5vw, 24px);
   padding: 1em 2.4em;
@@ -143,15 +143,15 @@ body {
   transform: skewX(-20deg) translate(-1px, -1px);
 }
 
-/* 按钮里的文字摆正 */
+
 #driver-select-text {
   display: block;
-  transform: skewX(20deg);   /* 抵消外层 -20deg */
+  transform: skewX(20deg);  
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
-/* 下拉菜单斜白板 */
+
 .season-menu {
   display: none;
   position: absolute;
@@ -171,7 +171,7 @@ body {
   z-index: 9999;
 }
 
-/* 菜单项（文字再反向 skew 一次） */
+
 .season-option {
   padding: 10px 0;
   text-align: center;
@@ -184,7 +184,7 @@ body {
 
 .season-option span {
   display: block;
-  transform: skewX(20deg); /* 抵消 -20deg，让文字直立 */
+  transform: skewX(20deg);
 }
 
 .season-option:hover,
@@ -194,15 +194,15 @@ body {
   color: #fff;
 }
 
-/* ========== 主体：车手名字 + 统计 ========== */
 
-/* 整个主体区域整体右移，和 DRIVERS 左边缘对齐 */
+
+
 .drivers-main {
   margin-left: var(--page-main-offset);
   margin-top: 0.2rem;
 }
 
-/* 车手大名 */
+
 .drivers-main__name {
   margin-top: 0.2rem;
   font-family: "Brunson", system-ui, sans-serif;
@@ -214,7 +214,7 @@ body {
   margin-bottom: 32px;
 }
 
-/* 统计网格：上 3 个 / 下 3 个 */
+
 .drivers-stats {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 300px));
@@ -226,10 +226,10 @@ body {
   flex-direction: column;
 }
 .driver-stat--championships {
-  grid-column: 1 / -1;  /* 从第一列跨到最后一列 */
+  grid-column: 1 / -1; 
 }
 
-/* 单个统计块标题 */
+
 .driver-stat__label {
   font-family: "Brunson", system-ui, sans-serif;
   font-size: 2.5rem;
@@ -241,27 +241,27 @@ body {
   color: #000;
 }
 
-/* 需要强调的用橙色（比如 CHAMPIONSHIPS） */
+
 .driver-stat__label--accent {
   color: #f0a720;
 }
 
-/* 数值 */
+
 .driver-stat__value {
   font-family: "Helvetica Neue", system-ui, sans-serif;
   font-size: 2rem;
-  font-weight: 400;             /* 不加粗 */
+  font-weight: 400;            
   line-height: 1.3;
   margin-top: 4px;
 }
 
-/* 预留照片区域（现在只是占位，对齐用） */
+
 .drivers-photo-strip {
   margin-top: 20px;
   min-height: 160px;
 }
 
-/* ========== 右侧 X 关闭按钮 ========== */
+
 .drivers-close {
   position: fixed;
   right: 50px;
@@ -290,7 +290,7 @@ body {
   transform: scale(1.1);
 }
 
-/* ========== 响应式 ========== */
+
 @media (max-width: 900px) {
   .drivers-page {
     padding: 25px 20px 30px 20px;
@@ -298,7 +298,7 @@ body {
 
   .drivers-header__title-block,
   .drivers-main {
-    margin-left: 20px;  /* 小屏时左右留白更窄 */
+    margin-left: 20px; 
   }
 
   .drivers-header__title {

@@ -9,17 +9,13 @@
 </head>
 <body>
   <main class="drivers-page" id="drivers-root">
-    <!-- 顶部：02 + DRIVERS + 选择按钮 -->
     <header class="drivers-header">
-      <!-- 左侧序号 -->
       <span class="drivers-header__index">02</span>
 
-      <!-- 标题块（和 results/highlights 一致的对齐方式） -->
       <div class="drivers-header__title-block">
         <div class="drivers-header__top-row">
           <h1 class="drivers-header__title">DRIVERS</h1>
 
-          <!-- 司机选择按钮，沿用菱形样式 -->
           <div class="drivers-header__chooser">
             <div class="season-dropdown">
               <button
@@ -30,7 +26,6 @@
                 <span id="driver-select-text">CHOOSE</span>
               </button>
 
-              <!-- 下拉列表 -->
               <div
                 class="season-menu"
                 id="driver-select-menu"
@@ -42,14 +37,10 @@
       </div>
     </header>
 
-    <!-- 主体：司机名字 + 统计信息 -->
     <section class="drivers-main">
-      <!-- 大名字 -->
       <h2 class="drivers-main__name" id="drivers-name">DRIVER</h2>
 
-      <!-- 六个统计块 -->
       <div class="drivers-stats">
-      <!-- 第 1 行：只有一个，通栏的 CHAMPIONSHIPS -->
       <div class="driver-stat driver-stat--championships">
         <div class="driver-stat__label driver-stat__label--accent">
           CHAMPIONSHIPS
@@ -57,7 +48,6 @@
         <div class="driver-stat__value" id="stat-championships">0</div>
       </div>
 
-      <!-- 第 2 行：RACE WINS / PODIUMS / CAREER POINTS -->
       <div class="driver-stat driver-stat--wins">
         <div class="driver-stat__label">RACE WINS</div>
         <div class="driver-stat__value" id="stat-race-wins">0</div>
@@ -73,7 +63,6 @@
         <div class="driver-stat__value" id="stat-career-points">0</div>
       </div>
 
-      <!-- 第 3 行：RACE ENTERED / SEASONS ENTERED / HIGHEST RACE FINISH -->
       <div class="driver-stat driver-stat--races">
         <div class="driver-stat__label">RACE ENTERED</div>
         <div class="driver-stat__value" id="stat-races-entered">0</div>
@@ -91,14 +80,11 @@
     </div>
 
 
-      <!-- 下面预留一块区域给以后加照片，现在先空着 -->
       <section class="drivers-photo-strip" id="drivers-photo-strip">
-        <!-- 以后你可以在这里放车手/赛车图片 -->
       </section>
     </section>
   </main>
 
-  <!-- 右边悬浮 X，和其他子页面一致 -->
   <button
     class="drivers-close"
     id="drivers-close"
