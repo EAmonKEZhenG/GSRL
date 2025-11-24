@@ -90,7 +90,7 @@ body {
 }
 
 
-.rules-header__subtitle {
+/* .rules-header__subtitle {
   margin-top: 0.2rem;
   font-family: "Brunson", system-ui, sans-serif;
   font-size: clamp(2rem, 5vw, 5rem);
@@ -98,7 +98,7 @@ body {
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: #2f2f2f;
-}
+} */
 
 
 
@@ -119,6 +119,7 @@ body {
   font-family: "Helvetica Neue", system-ui, sans-serif;
   font-size: 0.95rem;             
   letter-spacing: 0.16em;
+  /* margin-top: 10px; */
   text-transform: uppercase;
   padding: 0.9em 2em;
   border: 2px solid #000;
@@ -146,21 +147,6 @@ body {
   display: block;
 }
 
-
-.rules-section__heading {
-  font-family: "Brunson", system-ui, sans-serif;
-  font-size: 2.4rem;          
-  font-weight: 700;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-  margin-bottom: 10px;
-}
-
-.rules-section__intro {
-  font-family: "Helvetica Neue", system-ui, sans-serif;
-  font-size: 1rem;
-  margin-bottom: 16px;
-}
 
 
 .rules-section__doc-frame {
@@ -195,7 +181,7 @@ body {
 }
 
 .rules-close__icon {
-  font-size: 3.5rem;
+  font-size: 5rem;
   font-weight: 200;
   color: #000;
   line-height: 1;
@@ -221,9 +207,9 @@ body {
     font-size: clamp(3rem, 10vw, 5.5rem);
   }
 
-  .rules-header__subtitle {
+  /* .rules-header__subtitle {
     font-size: clamp(1.6rem, 6vw, 3rem);
-  }
+  } */
 
   .rules-section__iframe {
     height: 60vh;

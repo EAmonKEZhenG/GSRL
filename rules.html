@@ -8,7 +8,6 @@
 </head>
 <body>
   <main class="rules-page">
-    <!-- 顶部：04 + RULES -->
     <header class="rules-header">
       <span class="rules-header__index">04</span>
 
@@ -16,33 +15,26 @@
         <div class="rules-header__top-row">
           <h1 class="rules-header__title">RULES</h1>
         </div>
-        <p class="rules-header__subtitle">
+        <!-- <p class="rules-header__subtitle">
           BOP RULES &amp; POWER AND TIRE ADJUSTMENTS
-        </p>
+        </p> -->
       </div>
     </header>
 
-    <!-- 主体内容 -->
     <section class="rules-main">
-      <!-- 顶部 tab：两个按钮切换两份文档 -->
       <div class="rules-tabs">
         <button class="rules-tab rules-tab--active" data-target="rules-scoring">
           POINTS SYSTEM
         </button>
         <button class="rules-tab" data-target="rules-bop">
-          PERFORMANCE BALANCE
+         BALANCE OF PERFORMANCE
         </button>
       </div>
 
-      <!-- 积分规则 -->
       <section
         id="rules-scoring"
         class="rules-section rules-section--active"
       >
-        <h2 class="rules-section__heading">Points &amp; Championship Rules</h2>
-        <p class="rules-section__intro">
-          Official GSIL scoring format and championship calculation rules.
-        </p>
         <div class="rules-section__doc-frame">
           <iframe
             class="rules-section__iframe"
@@ -52,12 +44,7 @@
         </div>
       </section>
 
-      <!-- 性能限制 -->
       <section id="rules-bop" class="rules-section">
-        <h2 class="rules-section__heading">Performance Balance</h2>
-        <p class="rules-section__intro">
-          Balance of Performance rules, ballast, power and aero adjustments.
-        </p>
         <div class="rules-section__doc-frame">
           <iframe
             class="rules-section__iframe"
@@ -69,7 +56,6 @@
     </section>
   </main>
 
-  <!-- 右侧悬浮 X，和其他页面保持一致 -->
   <button
     class="rules-close"
     id="rules-close"

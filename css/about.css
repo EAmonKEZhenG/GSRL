@@ -78,9 +78,10 @@ body {
   margin-left: var(--page-main-offset);
   max-width: 900px;
   font-family: "Helvetica Neue", system-ui, sans-serif;
-  font-size: 1.5rem;
+  font-size: 1rem;
   line-height: 1.7;
   color: #111;
+  margin-top: 150px;
 }
 
 .about-main p + p {
@@ -94,7 +95,7 @@ body {
 
 .about-credits {
   margin-left: var(--page-main-offset);
-  margin-top: 60px;
+  margin-top: 20px;
   padding-bottom: 40px;
 }
 .about-credits__value a {
@@ -110,34 +111,37 @@ body {
   font-size: clamp(2rem, 5vw, 5rem);
   font-weight: 900;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.03em;
   margin-bottom: 24px;
   color: #2f2f2f;
 }
 
 .about-credits__grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 300px));
-  gap: 24px 60px;
+  grid-template-columns: repeat(3, minmax(0, 400px));
+  gap: 50px 250px;
+  margin-top: 90px;
 }
-.about-credits__grid2 {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 480px));
-  gap: 24px 60px;
-  margin-top: 20px;
+.about-credits__font-row {
+  margin-top: 60px;
+  max-width: 1000px;
+}
+.about-credits__value--nowrap {
+  white-space: nowrap;
 }
 
 .about-credits__label {
   font-family: "Brunson", system-ui, sans-serif;
-  font-size: 2rem;
+  font-size: 1.5rem;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.02em;
   margin-bottom: 6px;
 }
 
 .about-credits__value {
   font-family: "Helvetica Neue", system-ui, sans-serif;
-  font-size: 1.5rem;
+  font-size: 2.5rem;
+  font-weight: 700;
 }
 
 .about-close {
@@ -157,7 +161,7 @@ body {
 }
 
 .about-close__icon {
-  font-size: 3.5rem;
+  font-size: 5rem;
   font-weight: 200;
   color: #000;
   line-height: 1;
@@ -193,7 +197,7 @@ body {
   .about-credits__grid {
     grid-template-columns: 1fr;
   }
-  .about-credits__grid2 {
-    grid-template-columns: 1fr;
+  .about-credits__value--nowrap {
+    white-space: normal;
   }
 }

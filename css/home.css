@@ -123,7 +123,9 @@ body {
   color: var(--text-main);
   opacity: var(--text-opacity);
   opacity: 1;
-  font-size: clamp(5.5rem, 23vw, 30rem);
+  font-size: clamp(5.5rem, 20vw, 25rem);
+  line-height: 0.69;
+  margin-block: 0.1em 0;
 }
 
 
@@ -225,21 +227,21 @@ body {
 .nav-panel__list {
   display: flex;
   flex-direction: column;
-  gap: 25px;       
+  gap: 15px;       
 }
 
 
 .nav-panel__row {
   display: flex;
   align-items: flex-start;  
-  gap: 24px;                
+  gap: 15px;                
 }
 
 .nav-panel__index {
   font-family: "FuturaGSIL", system-ui, -apple-system, "Segoe UI",
     "Microsoft YaHei", sans-serif;
   font-weight: 700;
-  font-size: 1.1rem;     
+  font-size: 1.5rem;     
   letter-spacing: 0.1em; 
   text-transform: uppercase;
   color: #111;
@@ -252,7 +254,7 @@ body {
     "Microsoft YaHei", sans-serif;
   font-weight: 400;
   text-transform: uppercase;
-  font-size: clamp(5rem, 8.5vw, 13rem);
+  font-size: clamp(5rem, 9.5vw, 13rem);
   line-height: 0.9;
   border: none;
   background: transparent;
