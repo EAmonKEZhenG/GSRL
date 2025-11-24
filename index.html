@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>GSIL Racing Club</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./css/home.css" />
+</head>
+<body>
+  <main class="page" id="page-root">
+    <!-- ===== Hero 首页：背景视频 + FRIENDSHIP DRIVEN ===== -->
+    <section class="hero">
+      <!-- 背景视频 -->
+      <video
+        class="hero__bg-video"
+        src="./assets/video/home-bg.mp4"
+        autoplay
+        muted
+        loop
+        playsinline
+      ></video>
+
+      <!-- 深色遮罩，防止文字看不清 -->
+      <div class="hero__overlay"></div>
+
+      <!-- 中间的文字层 -->
+      <div class="hero__content">
+        <div class="hero__text">
+          <div class="hero__line hero__line--top">FRIENDSHIP</div>
+          <div class="hero__line hero__line--bottom">DRIVEN</div>
+        </div>
+      </div>
+
+      <!-- 右侧可点击箭头：打开导航面板 -->
+      <button class="hero__arrow" id="hero-next" aria-label="Open menu">
+        <span class="hero__arrow-icon"></span>
+      </button>
+    </section>
+
+        <!-- ===== 右侧导航面板 ===== -->
+    <section class="nav-panel" aria-hidden="true" id="nav-panel">
+      <div class="nav-panel__inner">
+
+        <div class="nav-panel__body">
+          <div class="nav-panel__list">
+
+            <div class="nav-panel__row">
+              <span class="nav-panel__index">01</span>
+              <button class="nav-panel__item" data-link="results.html">RESULTS</button>
+            </div>
+
+            <div class="nav-panel__row">
+              <span class="nav-panel__index">02</span>
+              <button class="nav-panel__item" data-link="drivers.html">DRIVERS</button>
+            </div>
+
+            <div class="nav-panel__row">
+              <span class="nav-panel__index">03</span>
+              <button class="nav-panel__item" data-link="highlights.html">HIGHLIGHTS</button>
+            </div>
+
+            <div class="nav-panel__row">
+              <span class="nav-panel__index">04</span>
+              <button class="nav-panel__item">RULES</button>
+            </div>
+
+            <div class="nav-panel__row">
+              <span class="nav-panel__index">05</span>
+              <button class="nav-panel__item">ABOUT</button>
+            </div>
+
+          </div>
+        </div>
+
+        <button class="nav-panel__close" id="nav-close">
+          <span class="nav-panel__close-icon"></span>
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <script src="./js/home.js"></script>
+</body>
+</html>

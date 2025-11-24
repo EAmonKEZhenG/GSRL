@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>GSIL Racing Club – Results</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- 结果页样式 -->
+  <link rel="stylesheet" href="./css/results.css" />
+</head>
+<body>
+  <main class="results-page" id="results-root">
+    <!-- 顶部栏：左边 01 + 返回箭头 + RESULTS 标题 + Season 选择 -->
+    <header class="results-header">
+      <!-- 左侧 01 -->
+      <div class="results-header__index">01</div>
+
+      <!-- 右侧：RESULTS + SEASON + 副标题 -->
+      <div class="results-header__titles">
+        <!-- 第一行：RESULTS + SEASON -->
+        <div class="results-header__topline">
+          <div class="results-header__title-row">
+            <h1 class="results-header__title">RESULTS</h1>
+              <div class="results-header__season">
+                <div class="season-dropdown">
+                  <button
+                    class="season-trigger"
+                    id="season-select-btn"
+                    type="button"
+                  >
+                    <span id="season-select-text">SEASON 1</span>
+                  </button>
+
+                  <!-- 下拉菜单容器，继续用你原来的 id，JS 不用改 -->
+                  <div
+                    class="season-menu"
+                    id="season-select-menu"
+                    style="display: none;"
+                  ></div>
+                </div>
+              </div>
+          </div>
+        </div>
+
+
+        <!-- 第二行：副标题 / 系列名 -->
+        <h2 class="results-header__subtitle" id="series-name">
+          GSIL
+        </h2>
+      </div>
+    </header>
+
+
+    <!-- 成绩表 -->
+    <section class="results-table-section">
+      <table class="results-table">
+        <thead>
+          <tr>
+            <th class="results-table__th results-table__th--pos">POSITION</th>
+            <th class="results-table__th results-table__th--driver">DRIVER</th>
+            <th class="results-table__th results-table__th--score">SCORE</th>
+            <!-- 每场比赛的国旗图标，由 JS 填 -->
+          </tr>
+        </thead>
+        <tbody id="results-tbody">
+          <!-- JS 根据赛季数据渲染 -->
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 底部三张图的区域：和该赛季相关的赛道/截图 -->
+    <section class="results-gallery" id="results-gallery">
+      <!-- JS 渲染 <figure> 等 -->
+    </section>
+  </main>
+
+  <!-- 关闭按钮（固定在右侧，不随滚动） -->
+  <button class="results-close" id="results-close" aria-label="Close">
+    <span class="results-close__icon">×</span>
+  </button>
+
+  <!-- 图片放大模态框 -->
+  <div class="results-modal" id="results-modal" style="display: none;">
+    <button class="results-modal__close" id="results-modal-close">×</button>
+    <img class="results-modal__img" id="results-modal-img" src="" alt="">
+  </div>
+  
+  <script src="./js/seasons-data.js"></script>
+  <script src="./js/results.js"></script>
+</body>
+</html>
