@@ -1,6 +1,3 @@
-// js/highlights.js
-
-// 从 YouTube URL 里提取 video id
 function extractYouTubeId(url) {
   try {
     const u = new URL(url);
@@ -10,13 +7,11 @@ function extractYouTubeId(url) {
       return u.pathname.replace("/", "");
     }
   } catch (e) {
-    // 解析失败就算了，后面会兜底直接打开原链接
   }
   return "";
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  // 确保数据文件已经加载成功
   if (typeof HIGHLIGHTS_SEASONS === "undefined") {
     console.error("HIGHLIGHTS_SEASONS 未定义，请确认已正确引入 highlights-data.js");
     return;
@@ -32,11 +27,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const modalIframe = document.getElementById("highlights-modal-iframe");
   const modalClose = document.getElementById("highlights-modal-close");
 
-  // 默认选第一个存在的赛季
   const firstSeason = HIGHLIGHTS_SEASONS[0];
   let currentSeason = firstSeason ? firstSeason.season : 1;
 
-  /* ========== 渲染 Season 下拉菜单 ========== */
   function renderSeasonMenu() {
     seasonMenu.innerHTML = "";
 
@@ -48,13 +41,13 @@ document.addEventListener("DOMContentLoaded", () => {
       item.textContent = `SEASON ${s.season}`;
 
       item.addEventListener("click", (ev) => {
-        ev.stopPropagation(); // 避免触发 document 的 click 事件
+        ev.stopPropagation();
 
         currentSeason = s.season;
         seasonText.textContent = `SEASON ${s.season}`;
-        renderSeason(currentSeason); // 重新渲染卡片
+        renderSeason(currentSeason);
 
-        renderSeasonMenu(); // 让 active 状态更新
+        renderSeasonMenu();
         seasonMenu.style.display = "none";
       });
 
@@ -62,7 +55,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  /* ========== 渲染某个赛季的所有 Highlight 卡片 ========== */
   function renderSeason(seasonNumber) {
     const seasonObj = HIGHLIGHTS_SEASONS.find(
       (s) => s.season === seasonNumber
@@ -103,12 +95,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
       link.appendChild(img);
 
-      // 点击缩略图：用模态框播放，而不是直接跳 YouTube
       link.addEventListener("click", (ev) => {
         ev.preventDefault();
 
         if (!id) {
-          // 解析不到 id 就直接开原链接
           window.open(race.url, "_blank", "noopener");
           return;
         }
@@ -123,29 +113,25 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  /* ========== Season 按钮交互 ========== */
   seasonBtn.addEventListener("click", (e) => {
     e.stopPropagation();
     const isOpen = seasonMenu.style.display === "block";
     seasonMenu.style.display = isOpen ? "none" : "block";
   });
 
-  // 点页面空白处收起菜单
   document.addEventListener("click", () => {
     seasonMenu.style.display = "none";
   });
 
-  /* ========== 右侧 X：返回首页 ========== */
   if (closeBtn) {
     closeBtn.addEventListener("click", () => {
       window.location.href = "./index.html";
     });
   }
 
-  /* ========== 模态框关闭 ========== */
   function closeModal() {
     modal.style.display = "none";
-    modalIframe.src = ""; // 停止播放
+    modalIframe.src = "";
   }
 
   if (modalClose) {
@@ -158,7 +144,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  /* ========== 初始化 ========== */
   seasonText.textContent = `SEASON ${currentSeason}`;
   renderSeasonMenu();
   renderSeason(currentSeason);

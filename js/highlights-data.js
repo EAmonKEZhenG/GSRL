@@ -1,12 +1,8 @@
-// js/highlights-data.js
-// 只存数据，方便以后改 / 加新赛季
-
 const HIGHLIGHTS_SEASONS = [
   {
     season: 1,
     races: [
-      // Season 1 你说目前没有视频，就留空数组或者注释即可
-      // { race: 1, url: "..." }
+
     ],
   },
   {

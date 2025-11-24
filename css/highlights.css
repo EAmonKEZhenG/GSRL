@@ -1,4 +1,4 @@
-/* ========== 字体 ========== */
+
 @font-face {
   font-family: "Brunson";
   src: url("../assets/fonts/Brunson.ttf") format("truetype");
@@ -23,13 +23,12 @@
   font-display: swap;
 }
 
-/* ===== 统一左对齐偏移（和 RESULTS 思路一样） ===== */
+
 :root {
-  /* 这就是 HIGHLIGHTS、RACE 标题等相对 03 的额外右移距离，自己觉得不顺眼就改这个值 */
   --page-main-offset: 79px;
 }
 
-/* ========== Reset ========== */
+
 * {
   margin: 0;
   padding: 0;
@@ -47,14 +46,14 @@ body {
     "Microsoft YaHei", sans-serif;
 }
 
-/* ========== 页面容器 ========== */
+
 .highlights-page {
   min-height: 100vh;
-  padding: 40px 140px 50px 50px; /* 左靠一点，右边给 X 留空间 */
+  padding: 40px 140px 50px 50px;
   position: relative;
 }
 
-/* ========== 顶部 Header ========== */
+
 .highlights-header {
   display: flex;
   align-items: flex-start;
@@ -62,7 +61,7 @@ body {
   margin-bottom: 32px;
 }
 
-/* 左上角 03 */
+
 .highlights-header__index {
   font-family: "FuturaGSIL", system-ui, sans-serif;
   font-size: 2.5rem;
@@ -71,14 +70,14 @@ body {
   line-height: 2;
 }
 
-/* 第一行：HIGHLIGHTS + season 按钮 */
+
 .highlights-header__top-row {
   display: flex;
   align-items: flex-end;
   gap: 20px;
 }
 
-/* 大标题 HIGHLIGHTS */
+
 .highlights-header__title {
   font-family: "Brunson", system-ui, sans-serif;
   font-size: clamp(4.8rem, 12vw, 15rem);
@@ -88,7 +87,7 @@ body {
   letter-spacing: 0.04em;
 }
 
-/* 副标题（下面那行） */
+
 .highlights-header__subtitle {
   margin-top: 0.2rem;
   font-family: "Brunson", system-ui, sans-serif;
@@ -99,33 +98,33 @@ body {
   color: #2f2f2f;
 }
 
-/* Season 按钮容器 */
-/* Season 按钮容器（和 results 一样的定位） */
+
+
 .highlights-header__season {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  margin-left: 8px;          /* 和 “HIGHLIGHTS” 之间的距离 */
-  transform: translateY(-6px); /* 微调垂直对齐 */
+  margin-left: 8px;         
+  transform: translateY(-6px);
   position: relative;
   z-index: 100;
 }
 
-/* 菱形按钮外层 */
+
 .highlights-header__season .season-dropdown {
   position: relative;
   display: inline-block;
   z-index: 100;
 }
 
-/* 菱形 Season 按钮 —— 完全对齐 results 的按钮 */
+
 .season-trigger {
   background: #000;
   color: #fff;
   border: 1px solid #000;
   cursor: pointer;
 
-  transform: skewX(-20deg);   /* 外轮廓倾斜 */
+  transform: skewX(-20deg);  
 
   font-size: clamp(14px, 1.5vw, 24px);
   padding: 1em 2.4em;
@@ -148,19 +147,19 @@ body {
   transform: skewX(-20deg) translate(-1px, -1px);
 }
 
-/* 按钮里的文字（HIGHLIGHTS 页面用的是 #highlights-season-text） */
+
 #highlights-season-text {
   display: block;
-  transform: skewX(20deg);      /* 抵消外层的 -20deg，让字正过来 */
+  transform: skewX(20deg);     
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
-/* 下拉菜单：斜着的白色卡片，和 results 一致 */
+
 .season-menu {
-  display: none;                /* JS 控制显示/隐藏 */
+  display: none;               
   position: absolute;
-  top: 100%;                    /* 紧贴按钮底部 */
+  top: 100%;                   
   left: 0;
   margin-top: 6px;
   width: 100%;
@@ -173,10 +172,10 @@ body {
   transform-origin: top left;
 
   overflow: hidden;
-  z-index: 9999;                /* 确保不会被下面内容盖住 */
+  z-index: 9999;               
 }
 
-/* 单个 Season 选项 */
+
 .season-option {
   padding: 10px 0;
   text-align: center;
@@ -188,13 +187,13 @@ body {
   transition: background 0.2s, color 0.2s;
 }
 
-/* 选项里的文字再反向 skew 一次，把字摆正 */
+
 .season-option span {
   display: block;
   transform: skewX(20deg);
 }
 
-/* 悬停 / 选中的高亮（蓝条面积和 results 一样） */
+
 .season-option:hover,
 .season-option--active,
 .season-menu .season-option.active {
@@ -203,18 +202,18 @@ body {
 }
 
 
-/* ========== 主内容区域整体右移（RACE #1 等） ========== */
+
 .highlights-main {
   margin-left: var(--page-main-offset);
 }
 
-/* ========== RACE 卡片网格 ========== */
-/* 这一季还没有视频时的提示文字 */
-/* 空赛季提示文案，风格跟 GSIL RACING CLUB 一致 */
+
+
+
 .highlights-empty {
-  margin-top: 40px; /* 和上面副标题拉开一点距离 */
+  margin-top: 40px;
   font-family: "Brunson", system-ui, sans-serif;
-  font-size: clamp(2rem, 3vw, 3rem);  /* 跟副标题同级、略小一点也可以 */
+  font-size: clamp(2rem, 3vw, 3rem); 
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.04em;
@@ -229,14 +228,14 @@ body {
   margin-top: 40px;
 }
 
-/* 单个 race 卡片 */
+
 .highlights-card {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-/* RACE #1 标题 */
+
 .highlights-card__title {
   font-family: "Brunson", system-ui, sans-serif;
   font-size: clamp(2.4rem, 4vw, 3.6rem);
@@ -246,7 +245,7 @@ body {
   color: #2f2f2f;
 }
 
-/* 缩略图外层 */
+
 .highlights-card__thumb-link {
   position: relative;
   display: block;
@@ -256,7 +255,7 @@ body {
   aspect-ratio: 16 / 9;
 }
 
-/* 统一缩略图尺寸 */
+
 .highlights-card__thumb {
   width: 100%;
   height: 100%;
@@ -265,7 +264,7 @@ body {
   transition: transform 0.25s ease;
 }
 
-/* 覆盖层（暗角） */
+
 .highlights-card__thumb-link::after {
   content: "";
   position: absolute;
@@ -295,7 +294,7 @@ body {
   transform: scale(1.04);
 }
 
-/* ========== 右侧关闭 X ========== */
+
 .highlights-close {
   position: fixed;
   right: 50px;
@@ -324,7 +323,7 @@ body {
   transform: scale(1.1);
 }
 
-/* ========== Modal 播放大视频 ========== */
+
 .highlights-modal {
   position: fixed;
   inset: 0;
@@ -364,13 +363,13 @@ body {
   transform: scale(1.1);
 }
 
-/* ========== 响应式 ========== */
+
 @media (max-width: 900px) {
   .highlights-page {
     padding: 25px 20px 30px 20px;
   }
 
-  /* 小屏不再右移，全部顶到页面 padding 左边 */
+ 
   .highlights-header__title-block,
   .highlights-main {
     margin-left: 0;
@@ -390,7 +389,7 @@ body {
   }
 
   .highlights-grid {
-    grid-template-columns: 1fr; /* 小屏一列 */
+    grid-template-columns: 1fr;
   }
 
   .highlights-close {

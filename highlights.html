@@ -5,23 +5,17 @@
   <title>GSIL Racing Club – Highlights</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- 样式文件 -->
   <link rel="stylesheet" href="./css/highlights.css" />
 </head>
 <body>
   <main class="highlights-page" id="highlights-root">
-    <!-- 顶部：03 + HIGHLIGHTS + Season 按钮 + 副标题 -->
     <header class="highlights-header">
-      <!-- 左侧 03 序号（贴左，不参与整体右移） -->
       <span class="highlights-header__index">03</span>
 
-      <!-- 标题块（HIGHLIGHTS + 按钮 + 副标题，整体右移） -->
       <div class="highlights-header__title-block">
-        <!-- 第一行：大标题 + Season 按钮 -->
         <div class="highlights-header__top-row">
           <h1 class="highlights-header__title">HIGHLIGHTS</h1>
 
-          <!-- Season 下拉按钮（菱形样式在 CSS 里做） -->
           <div class="highlights-header__season">
             <div class="season-dropdown">
               <button
@@ -32,7 +26,6 @@
                 <span id="highlights-season-text">SEASON 1</span>
               </button>
 
-              <!-- 下拉菜单容器，JS 里填内容 -->
               <div
                 class="season-menu"
                 id="highlights-season-menu"
@@ -45,16 +38,12 @@
       </div>
     </header>
 
-    <!-- 这里开始是“正文区域”，整体右移，和 HIGHLIGHTS 左对齐 -->
     <div class="highlights-main">
-      <!-- 视频卡片网格：JS 会往里塞 RACE #1、#2 这些 -->
       <section class="highlights-grid" id="highlights-grid">
-        <!-- JS 动态生成内容 -->
       </section>
     </div>
   </main>
 
-  <!-- 右侧悬浮的 X（回到主页用） -->
   <button
     class="highlights-close"
     id="highlights-close"
@@ -63,7 +52,6 @@
     <span class="highlights-close__icon">×</span>
   </button>
 
-  <!-- 点击缩略图后弹出的播放模态框 -->
   <div
     class="highlights-modal"
     id="highlights-modal"
@@ -88,7 +76,6 @@
     ></iframe>
   </div>
 
-  <!-- 先加载数据，再加载逻辑 -->
   <script src="./js/highlights-data.js"></script>
   <script src="./js/highlights.js"></script>
 </body>
