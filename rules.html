@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>GSIL Racing Club – Rules</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./css/rules.css" />
+</head>
+<body>
+  <main class="rules-page">
+    <!-- 顶部：04 + RULES -->
+    <header class="rules-header">
+      <span class="rules-header__index">04</span>
+
+      <div class="rules-header__title-block">
+        <div class="rules-header__top-row">
+          <h1 class="rules-header__title">RULES</h1>
+        </div>
+        <p class="rules-header__subtitle">
+          BOP RULES &amp; POWER AND TIRE ADJUSTMENTS
+        </p>
+      </div>
+    </header>
+
+    <!-- 主体内容 -->
+    <section class="rules-main">
+      <!-- 顶部 tab：两个按钮切换两份文档 -->
+      <div class="rules-tabs">
+        <button class="rules-tab rules-tab--active" data-target="rules-scoring">
+          POINTS SYSTEM
+        </button>
+        <button class="rules-tab" data-target="rules-bop">
+          PERFORMANCE BALANCE
+        </button>
+      </div>
+
+      <!-- 积分规则 -->
+      <section
+        id="rules-scoring"
+        class="rules-section rules-section--active"
+      >
+        <h2 class="rules-section__heading">Points &amp; Championship Rules</h2>
+        <p class="rules-section__intro">
+          Official GSIL scoring format and championship calculation rules.
+        </p>
+        <div class="rules-section__doc-frame">
+          <iframe
+            class="rules-section__iframe"
+            src="https://docs.google.com/document/d/1auDQ1Kl22cHi93_gU3_acPc-nV9WvWthKjdeKmpYiDM/preview"
+            loading="lazy"
+          ></iframe>
+        </div>
+      </section>
+
+      <!-- 性能限制 -->
+      <section id="rules-bop" class="rules-section">
+        <h2 class="rules-section__heading">Performance Balance</h2>
+        <p class="rules-section__intro">
+          Balance of Performance rules, ballast, power and aero adjustments.
+        </p>
+        <div class="rules-section__doc-frame">
+          <iframe
+            class="rules-section__iframe"
+            src="https://docs.google.com/document/d/16PUrAaB0s74qcRbrBLmJ213DqkqJ0bMMeKSwFzILe8I/preview"
+            loading="lazy"
+          ></iframe>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <!-- 右侧悬浮 X，和其他页面保持一致 -->
+  <button
+    class="rules-close"
+    id="rules-close"
+    aria-label="Back to home"
+  >
+    <span class="rules-close__icon">×</span>
+  </button>
+
+  <script src="./js/rules.js"></script>
+</body>
+</html>
