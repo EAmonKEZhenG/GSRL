@@ -222,6 +222,8 @@ body {
 
 .results-table__th {
     font-family: "Brunson", system-ui, sans-serif;
+    position: relative;
+    overflow: visible;
     font-size: 2.5rem;
     text-align: left;
     padding: 8px 12px;
@@ -253,7 +255,7 @@ body {
 
     margin: 0 auto;
     border-radius: 50%;
-    overflow: hidden;
+    overflow: visible;
 
     border: 1px solid #ddd; 
     background-color: #f0f0f0;
@@ -274,20 +276,24 @@ body {
 
 
 .results-table__th-flag-tooltip {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     position: absolute;
-    bottom: 100%;
+    bottom: calc(100% + 8px); 
     left: 50%;
     transform: translateX(-50%);
     margin-bottom: 5px;
-    padding: 4px 8px;
+    padding: 6px 10px;
     background: #000;
     color: #fff;
-    font-size: 0.75rem;
+    font-size: 0.85rem;
     white-space: nowrap;
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.2s;
-    z-index: 10;
+    z-index: 20;
+    background: rgba(0,0,0,0.9);
+    border-radius: 4px;
+    line-height: 1.3;
 }
 
 .results-table__th-flag:hover .results-table__th-flag-tooltip {
@@ -409,13 +415,13 @@ body {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr)); 
   gap: 20px;
-  margin-top: 40px;
+  margin-top: 65px;
 }
 
 .results-gallery__item {
   position: relative;
   overflow: hidden;
-  border-radius: 2px;
+  border-radius: 8px;
   cursor: pointer;
   transition: transform 0.2s;
 
