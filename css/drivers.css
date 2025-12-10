@@ -204,13 +204,13 @@ body {
 
 
 .drivers-main__name {
-  margin-top: 0.2rem;
+  margin-top: 2.2rem;
   font-family: "Brunson", system-ui, sans-serif;
   font-size: clamp(2rem, 5vw, 5rem);
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: #2f2f2f;
+  color: #222222;
   margin-bottom: 32px;
 }
 
