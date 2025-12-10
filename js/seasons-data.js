@@ -64,6 +64,7 @@ const SEASONS = [
     gallery: [
       "./assets/images/season_images/S3/S3R1_Start.png",
       "./assets/images/season_images/S3/S3R2_Start.png",
+      "./assets/images/season_images/S3/S3R1_Start_02.png",
       "./assets/images/season_images/S3/S3R2_KevinVRobin.png"
     ]
   },
@@ -86,6 +87,8 @@ const SEASONS = [
     ],
     gallery: [
       "./assets/images/season_images/S4/S4R1_Start.png",
+      "./assets/images/season_images/S4/S4R1_Start_02.png",
+      "./assets/images/season_images/S4/S4R1_Start_03.png",
       "./assets/images/season_images/S4/S4R2_Rain_film.jpg"
     ]
   },
