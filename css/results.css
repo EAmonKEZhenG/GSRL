@@ -107,6 +107,62 @@ body {
     color: #222222;
 }
 
+.results-champions {
+    --champion-gold: #d4af37;
+    margin-top: 14px;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    min-width: min(100%, 560px);
+    padding: 12px 18px;
+    border: 1.8px solid rgba(212, 175, 55, 0.75);
+    border-radius: 8px;
+    background:
+      radial-gradient(circle at 14% 10%, rgba(255, 255, 255, 0.06), transparent 34%),
+      linear-gradient(180deg, #242424 0%, #151515 100%);
+    box-shadow:
+      inset 0 0 0 1px rgba(255, 230, 150, 0.12),
+      4px 4px 0 rgba(0, 0, 0, 0.28);
+}
+
+.results-champion-row {
+    color: var(--champion-gold);
+    width: min(100%, 360px);
+    text-align: center;
+}
+
+.results-champion-row + .results-champion-row {
+    border-top: 1px solid rgba(212, 175, 55, 0.25);
+    margin-top: 6px;
+    padding-top: 8px;
+}
+
+.results-champion-row__content {
+    min-width: 0;
+    width: min(100%, 300px);
+    margin: 0 auto;
+    padding: 2px 4px 4px;
+}
+
+.results-champion-row__label {
+    font-family: "Brunson", system-ui, sans-serif;
+    font-size: 1.14rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--champion-gold);
+    line-height: 1.15;
+}
+
+.results-champion-row__value {
+    margin-top: 3px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1.48rem;
+    font-weight: 700;
+    line-height: 1.25;
+    color: var(--champion-gold);
+}
+
 
 .results-header__season {
   display: flex;
@@ -501,6 +557,26 @@ body {
 
   .results-header__subtitle {
     font-size: clamp(1.6rem, 6vw, 3rem);
+  }
+
+  .results-champions {
+    width: 100%;
+    min-width: 0;
+    padding: 10px 12px;
+  }
+
+  .results-champion-row__content {
+    width: min(100%, 240px);
+    padding: 2px 4px 4px;
+  }
+
+  .results-champion-row__label {
+    font-size: 1rem;
+    letter-spacing: 0.03em;
+  }
+
+  .results-champion-row__value {
+    font-size: 1.16rem;
   }
 
   .season-trigger {

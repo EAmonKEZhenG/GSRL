@@ -27,13 +27,17 @@ document.addEventListener("DOMContentLoaded", () => {
   const modalIframe = document.getElementById("highlights-modal-iframe");
   const modalClose = document.getElementById("highlights-modal-close");
 
-  const firstSeason = HIGHLIGHTS_SEASONS[0];
+  const sortedSeasons = [...HIGHLIGHTS_SEASONS].sort(
+    (a, b) => Number(b.season || 0) - Number(a.season || 0)
+  );
+
+  const firstSeason = sortedSeasons[0];
   let currentSeason = firstSeason ? firstSeason.season : 1;
 
   function renderSeasonMenu() {
     seasonMenu.innerHTML = "";
 
-    HIGHLIGHTS_SEASONS.forEach((s) => {
+    sortedSeasons.forEach((s) => {
       const item = document.createElement("div");
       item.className =
         "season-option" +
@@ -56,9 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function renderSeason(seasonNumber) {
-    const seasonObj = HIGHLIGHTS_SEASONS.find(
-      (s) => s.season === seasonNumber
-    );
+    const seasonObj = sortedSeasons.find((s) => s.season === seasonNumber);
 
     grid.innerHTML = "";
 

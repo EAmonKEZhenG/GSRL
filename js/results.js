@@ -1,7 +1,12 @@
-// Helper function to calculate total points (treats "DNF" as 0)
+// Helper function to normalize DNF/DNS status values
+function isDidNotStart(value) {
+  return value === "DNF" || value === "DNS";
+}
+
+// Helper function to calculate total points (treats DNF/DNS as 0)
 function calculateTotal(points) {
   return points.reduce((sum, p) => {
-    if (p === "DNF" || p === null || p === undefined) return sum;
+    if (isDidNotStart(p) || p === null || p === undefined) return sum;
     return sum + (typeof p === "number" ? p : 0);
   }, 0);
 }
@@ -14,7 +19,7 @@ function findChampionRaceIndex(standings, raceIndex) {
   standings.forEach((driver, idx) => {
     const score = driver.points[raceIndex];
     if (
-      score !== "DNF" &&
+      !isDidNotStart(score) &&
       score !== null &&
       score !== undefined &&
       typeof score === "number"
@@ -36,6 +41,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const seasonSelectText = document.getElementById("season-select-text");
   const seasonSelectMenu = document.getElementById("season-select-menu");
   const seriesNameEl = document.getElementById("series-name");
+  const teamsChampionEl = document.getElementById("teams-champion");
+  const driversChampionEl = document.getElementById("drivers-champion");
   const tbody = document.getElementById("results-tbody");
   const galleryEl = document.getElementById("results-gallery");
   const modal = document.getElementById("results-modal");
@@ -47,6 +54,11 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
+  const sortedSeasons = [...SEASONS].sort((a, b) => {
+    const aSeason = Number(a.id.replace(/[^\d]/g, "")) || 0;
+    const bSeason = Number(b.id.replace(/[^\d]/g, "")) || 0;
+    return bSeason - aSeason;
+  });
 
   backBtn?.addEventListener("click", () => {
     window.location.href = "index.html";
@@ -77,7 +89,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function buildSeasonMenu() {
     seasonSelectMenu.innerHTML = "";
 
-    SEASONS.forEach((s, idx) => {
+    sortedSeasons.forEach((s, idx) => {
       const item = document.createElement("div");
       item.className = "season-option";
 
@@ -112,8 +124,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   buildSeasonMenu();
 
-  if (SEASONS.length > 0) {
-    seasonSelectText.textContent = SEASONS[0].label;
+  if (sortedSeasons.length > 0) {
+    seasonSelectText.textContent = sortedSeasons[0].label;
   }
 
   function renderSeason(seasonId) {
@@ -160,6 +172,39 @@ document.addEventListener("DOMContentLoaded", () => {
       .sort((a, b) => b.total - a.total)
       .map((d, idx) => ({ ...d, position: idx + 1 }));
 
+    const overallChampion = sorted.find((d) => d.position === 1);
+
+    const teams = season.standings
+      .map((entry) => entry.team)
+      .filter((team) => typeof team === "string" && team.trim().length > 0);
+
+    let teamsChampion = "N/A";
+    if (new Set(teams).size > 1) {
+      const teamTotals = new Map();
+      standingsWithTotals.forEach((entry) => {
+        const teamName = entry.team || "";
+        if (!teamName) return;
+        teamTotals.set(teamName, (teamTotals.get(teamName) || 0) + entry.total);
+      });
+
+      let bestTeam = "N/A";
+      let bestScore = -1;
+      teamTotals.forEach((score, teamName) => {
+        if (score > bestScore) {
+          bestScore = score;
+          bestTeam = teamName;
+        }
+      });
+      teamsChampion = bestTeam;
+    }
+
+    if (teamsChampionEl) {
+      teamsChampionEl.textContent = teamsChampion;
+    }
+    if (driversChampionEl) {
+      driversChampionEl.textContent = overallChampion ? overallChampion.driver : "N/A";
+    }
+
     const raceChampions = [];
     for (let raceIdx = 0; raceIdx < season.races.length; raceIdx++) {
       let maxScore = -1;
@@ -168,7 +213,7 @@ document.addEventListener("DOMContentLoaded", () => {
       standingsWithTotals.forEach((driver) => {
         const score = driver.points[raceIdx];
         if (
-          score !== "DNF" &&
+          !isDidNotStart(score) &&
           score !== null &&
           score !== undefined &&
           typeof score === "number"
@@ -182,8 +227,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
       raceChampions.push(raceChampion);
     }
-
-    const overallChampion = sorted.find((d) => d.position === 1);
 
     tbody.innerHTML = "";
     sorted.forEach((row) => {
@@ -235,8 +278,8 @@ document.addEventListener("DOMContentLoaded", () => {
           }
         }
 
-        if (p === "DNF") {
-          td.textContent = "DNF";
+        if (isDidNotStart(p)) {
+          td.textContent = "DNS";
           td.classList.add("results-table__race--dnf");
         } else if (p === null || p === undefined) {
           td.textContent = "";
@@ -283,8 +326,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  if (SEASONS.length > 0) {
-    renderSeason(SEASONS[0].id);
+  if (sortedSeasons.length > 0) {
+    renderSeason(sortedSeasons[0].id);
   }
 
   function syncSeasonButtonHeight() {
